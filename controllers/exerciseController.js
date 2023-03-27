@@ -130,7 +130,8 @@ module.exports = {
             const newExercise = {
                 title,
                 videoURL,
-                description
+                description,
+                user:req.user.id
             }
             const createdExercise = await Exercise.create(newExercise);
             res.redirect('/exercises/' + createdExercise._id);
